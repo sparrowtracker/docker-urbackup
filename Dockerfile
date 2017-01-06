@@ -1,4 +1,4 @@
-FROM ubuntu:13.10
+FROM centos:centos7
 MAINTAINER Don Glenn <github@jaspercat.com> 
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
