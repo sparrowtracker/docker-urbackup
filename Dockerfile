@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM ubuntu
 MAINTAINER Don Glenn <github@jaspercat.com> 
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
