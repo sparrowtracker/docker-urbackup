@@ -1,14 +1,17 @@
 FROM ubuntu:13.10
 MAINTAINER Don Glenn <github@jaspercat.com> 
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
+ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
+
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-software-properties software-properties-common btrfs-tools
+RUN apt-get install -y python-software-properties software-properties-common btrfs-tools
 RUN apt-add-repository ppa:uroni/urbackup
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y urbackup-server
+RUN apt-get install -fy sqlite3 libsqlite3-dev
+RUN apt-get install -y urbackup-server
 RUN mkdir -p /media/BACKUP/urbackup
+RUN chmod -R 777 /media/BACKUP/
 RUN apt-get clean
 
 EXPOSE 55413
