@@ -11,6 +11,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y urbackup-server
 RUN mkdir -p /media/BACKUP/urbackup
 RUN apt-get clean
 
+EXPOSE 55413
 EXPOSE 55414
+EXPOSE 55415
+EXPOSE 35623
+VOLUME [ "/var/urbackup", "/usr/share/urbackup" ]
 ENTRYPOINT ["/usr/sbin/start_urbackup_server"]
 CMD ["--no_daemon"]
