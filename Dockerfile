@@ -1,8 +1,10 @@
-FROM centos:centos7
+FROM phusion/baseimage:0.9.19
 MAINTAINER Don Glenn <github@jaspercat.com> 
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
 
+RUN apt-get update
+RUN apt-get upgrade -y
 RUN apt-get install -y python-software-properties software-properties-common btrfs-tools
 RUN apt-add-repository ppa:uroni/urbackup
 RUN apt-get update
