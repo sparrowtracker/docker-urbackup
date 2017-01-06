@@ -1,5 +1,5 @@
 FROM ubuntu:13.10
-MAINTAINER Brian Findlay <bfindlay@comlink.net>
+MAINTAINER Don Glenn <github@jaspercat.com>
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
 RUN apt-get update
