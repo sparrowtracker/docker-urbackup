@@ -8,7 +8,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y python-software-properties software-properties-common btrfs-tools apt-utils
 RUN add-apt-repository ppa:uroni/urbackup
 RUN apt update
-RUN apt -y install urbackup-server
+RUN apt install -y urbackup-server
 RUN mkdir -p /media/BACKUP/urbackup
 RUN chmod -R 777 /media/BACKUP/
 RUN apt-get clean
