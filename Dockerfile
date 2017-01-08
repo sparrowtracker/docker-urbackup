@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM ubuntu:15.10
 MAINTAINER Don Glenn <github@jaspercat.com> 
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
@@ -11,7 +11,7 @@ RUN apt update
 RUN apt install urbackup-server
 RUN mkdir -p /media/BACKUP/urbackup
 RUN chmod -R 777 /media/BACKUP/
-#RUN apt-get clean
+RUN apt-get clean
 
 EXPOSE 55413
 EXPOSE 55414
