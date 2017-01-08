@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y python-software-properties software-properties-common btrfs-tools
+RUN apt-get install -y python-software-properties software-properties-common btrfs-tools apt-utils
 RUN add-apt-repository ppa:uroni/urbackup
 RUN apt update
 RUN apt install urbackup-server
